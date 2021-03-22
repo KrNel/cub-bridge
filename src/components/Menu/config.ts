@@ -30,6 +30,11 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: 'https://cubdefi.com/dens',
   },
+  {
+    label: 'Bridge',
+    icon: 'NftIcon',
+    href: "https://bridge.cubdefi.com",
+  },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',

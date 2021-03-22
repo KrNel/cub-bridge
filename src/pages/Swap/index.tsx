@@ -309,7 +309,7 @@ const Swap = () => {
             swapErrorMessage={swapErrorMessage}
             onDismiss={handleConfirmDismiss}
           />
-          <PageHeader title="Exchange" description="Trade tokens in an instant" />
+          <PageHeader title="Bridge" description="Convert tokens between Ethereum and BSC" />
           <CardBody>
             <AutoColumn gap="md">
               <CurrencyInputPanel
@@ -489,6 +489,7 @@ const Swap = () => {
         </Wrapper>
       </AppBody>
       <AdvancedSwapDetailsDropdown trade={trade} />
+      <img src="/images/cub/wide.svg" alt="Wide" style={{maxHeight: "400px"}} />
     </>
   )
 }
