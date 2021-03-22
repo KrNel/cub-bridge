@@ -489,7 +489,7 @@ const Swap = () => {
         </Wrapper>
       </AppBody>
       <AdvancedSwapDetailsDropdown trade={trade} />
-      <img src="/images/cub/wide.svg" alt="Wide" style={{maxHeight: "400px"}} />
+      <img src="/images/cub/wide_bridge.png" alt="Wide" style={{maxHeight: "400px"}} />
     </>
   )
 }
