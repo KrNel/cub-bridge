@@ -1984,7 +1984,7 @@
 
 "@pancakeswap-libs/uikit@CubFinance/cub-uikit":
   version "0.10.2"
-  resolved "https://codeload.github.com/CubFinance/cub-uikit/tar.gz/81e3ae3408f21cdd9ab3a9b96c9ac733816456f2"
+  resolved "https://codeload.github.com/CubFinance/cub-uikit/tar.gz/2c5ac70dcf7ea2146159084c1556097411eae934"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

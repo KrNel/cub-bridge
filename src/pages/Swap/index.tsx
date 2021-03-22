@@ -459,7 +459,7 @@ const Swap = () => {
                 <Button
                   onClick={() => {
                     if (isExpertMode) {
-                      handleSwap()
+                      handleSwap();
                     } else {
                       setSwapState({
                         tradeToConfirm: trade,
