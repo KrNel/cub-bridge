@@ -55,6 +55,10 @@ const Marginer = styled.div`
   margin-top: 5rem;
 `
 
+const Soon = () => (
+  <div style={{ fontSize: '2rem' }}>Coming soon</div>
+)
+
 export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState<any>(undefined)
   const [translatedLanguage, setTranslatedLanguage] = useState<any>(undefined)
@@ -122,7 +126,8 @@ export default function App() {
                   <Popups />
                   <Web3ReactManager>
                     <Switch>
-                      <Route exact strict path='/' component={Swap} />
+                      <Route exact strict path='/' component={Soon} />
+                      {/* <Route exact strict path='/' component={Swap} /> */}
                       <Route exact strict path='/:outputCurrency' component={RedirectToSwap} />
                       {/* <Route exact strict path='/send' component={RedirectPathToSwapOnly} />
                       <Route exact strict path='/find' component={PoolFinder} />

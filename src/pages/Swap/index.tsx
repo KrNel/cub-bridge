@@ -4,6 +4,7 @@ import { ArrowDown } from 'react-feather'
 import { CardBody, ArrowDownIcon, Button, IconButton, Text } from '@pancakeswap-libs/uikit'
 import { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
+import RecipientAddressPanel from 'components/RecipientAddressPanel'
 import Card, { GreyCard } from 'components/Card'
 import { AutoColumn } from 'components/Column'
 import ConfirmSwapModal from 'components/swap/ConfirmSwapModal'
@@ -42,6 +43,16 @@ import AppBody from '../AppBody'
 const { main: Main } = TYPE
 
 const Swap = () => {
+  const ETH_CHAIN = 'From (Ethereum)'
+  const BSC_CHAIN = 'To (BEP20)'
+  const RECEIVER_ADDR = 'Your address to receive'
+  const [bridgeRecipient, setBridgeRecipient] = useState<string>('')
+
+  const handleRecipientChange = value => {
+    console.log('value',value)
+    setBridgeRecipient(value)
+  }
+
   const loadedUrlParams = useDefaultsFromURLSearch()
 
   // token warning stuff
@@ -281,6 +292,8 @@ const Swap = () => {
     [onCurrencySelection, checkForSyrup]
   )
 
+  const outCurSymbol = currencies && currencies.OUTPUT && currencies.OUTPUT.symbol
+
   return (
     <>
       <TokenWarningModal
@@ -312,6 +325,7 @@ const Swap = () => {
           <PageHeader title="Bridge" description="Convert tokens between Ethereum and BSC" />
           <CardBody>
             <AutoColumn gap="md">
+              {ETH_CHAIN}
               <CurrencyInputPanel
                 label={
                   independentField === Field.OUTPUT && !showWrap && trade
@@ -349,6 +363,7 @@ const Swap = () => {
                   ) : null}
                 </AutoRow>
               </AutoColumn>
+              {BSC_CHAIN}
               <CurrencyInputPanel
                 value={formattedAmounts[Field.OUTPUT]}
                 onUserInput={handleTypeOutput}
@@ -361,6 +376,13 @@ const Swap = () => {
                 otherCurrency={currencies[Field.INPUT]}
                 id="swap-currency-output"
               />
+
+              {outCurSymbol && (
+                <>
+                  {RECEIVER_ADDR} {outCurSymbol}
+                  <RecipientAddressPanel id="receiver-addr" value={bridgeRecipient} onChange={onChangeRecipient} onUserInput={handleRecipientChange} />
+                </>
+              )}
 
               {recipient !== null && !showWrap ? (
                 <>
