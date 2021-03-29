@@ -90,6 +90,7 @@ interface CurrencyInputPanelProps {
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
+  currencyType?: string
 }
 
 export default function CurrencyInputPanel({
@@ -106,7 +107,8 @@ export default function CurrencyInputPanel({
   hideInput = false,
   otherCurrency,
   id,
-  showCommonBases
+  showCommonBases,
+  currencyType = ''
 }: CurrencyInputPanelProps) {
   const [modalOpen, setModalOpen] = useState(false)
   const { account } = useActiveWeb3React()
@@ -172,8 +174,8 @@ export default function CurrencyInputPanel({
               ) : (
                 <Text>
                   {(currency && currency.symbol && currency.symbol.length > 20
-                    ? `${currency.symbol.slice(0, 4) 
-                      }...${ 
+                    ? `${currency.symbol.slice(0, 4)
+                      }...${
                       currency.symbol.slice(currency.symbol.length - 5, currency.symbol.length)}`
                     : currency?.symbol) || <TranslatedText translationId={82}>Select a currency</TranslatedText>}
                 </Text>
@@ -191,6 +193,7 @@ export default function CurrencyInputPanel({
           selectedCurrency={currency}
           otherSelectedCurrency={otherCurrency}
           showCommonBases={showCommonBases}
+          currencyType={currencyType}
         />
       )}
     </InputPanel>

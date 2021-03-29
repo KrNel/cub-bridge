@@ -36,6 +36,7 @@ interface CurrencySearchProps {
   otherSelectedCurrency?: Currency | null
   showCommonBases?: boolean
   onChangeList: () => void
+  currencyType?: string
 }
 
 export function CurrencySearch({
@@ -46,6 +47,7 @@ export function CurrencySearch({
   onDismiss,
   isOpen,
   onChangeList,
+  currencyType ='',
 }: CurrencySearchProps) {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()

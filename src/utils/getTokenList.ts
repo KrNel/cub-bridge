@@ -6,8 +6,9 @@ import { parseENSAddress } from './parseENSAddress'
 import uriToHttp from './uriToHttp'
 
 // bakeryswap defaultTokenJson
-import { DEFAULT_TOKEN_LIST_URL } from '../constants/lists'
+import { DEFAULT_TOKEN_LIST_URL, WETH_TOKEN_LIST_URL } from '../constants/lists'
 import defaultTokenJson from '../constants/token/pancakeswap.json'
+import uniswapTokenJson from '../bridge-js/utils/tokens/Uniswap.json'
 
 const tokenListValidator = new Ajv({ allErrors: true }).compile(schema)
 
@@ -23,6 +24,10 @@ export default async function getTokenList(
   if (listUrl === DEFAULT_TOKEN_LIST_URL) {
     return defaultTokenJson
   }
+  if (listUrl === WETH_TOKEN_LIST_URL) {
+    return uniswapTokenJson
+  }
+
   const parsedENS = parseENSAddress(listUrl)
 
   let urls: string[]

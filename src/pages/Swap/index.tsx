@@ -49,7 +49,6 @@ const Swap = () => {
   const [bridgeRecipient, setBridgeRecipient] = useState<string>('')
 
   const handleRecipientChange = value => {
-    console.log('value',value)
     setBridgeRecipient(value)
   }
 
@@ -340,6 +339,7 @@ const Swap = () => {
                 onCurrencySelect={handleInputSelect}
                 otherCurrency={currencies[Field.OUTPUT]}
                 id="swap-currency-input"
+                currencyType="uniswap"
               />
               <AutoColumn justify="space-between">
                 <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
@@ -375,6 +375,7 @@ const Swap = () => {
                 onCurrencySelect={handleOutputSelect}
                 otherCurrency={currencies[Field.INPUT]}
                 id="swap-currency-output"
+                currencyType="pancakeswap"
               />
 
               {outCurSymbol && (

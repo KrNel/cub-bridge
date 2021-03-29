@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { save, load } from 'redux-localstorage-simple'
+import logger from 'redux-logger'
 
 import application from './application/reducer'
 import { updateVersion } from './global/actions'
@@ -37,7 +38,7 @@ const store = configureStore({
     multicall,
     lists,
   },
-  middleware: [...getDefaultMiddleware({ thunk: false }), save({ states: PERSISTED_KEYS })],
+  middleware: [...getDefaultMiddleware({ thunk: false }), save({ states: PERSISTED_KEYS }), logger],
   preloadedState: loadedState,
 })
 
