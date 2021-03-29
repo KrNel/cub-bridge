@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, Token } from '../../bridge-js/pancakeswap-sdk/src'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 

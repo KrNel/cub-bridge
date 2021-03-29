@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@pancakeswap-libs/sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '../bridge-js/pancakeswap-sdk/src'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

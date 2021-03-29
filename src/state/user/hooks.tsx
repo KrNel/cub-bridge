@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@pancakeswap-libs/sdk'
+import { ChainId, Pair, Token } from '../../bridge-js/pancakeswap-sdk/src'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'

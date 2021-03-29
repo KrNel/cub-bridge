@@ -1,4 +1,4 @@
-import { Currency } from '@pancakeswap-libs/sdk'
+import { Currency } from '../../bridge-js/pancakeswap-sdk/src'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../state'

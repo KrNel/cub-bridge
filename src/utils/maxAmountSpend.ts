@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, JSBI } from '@pancakeswap-libs/sdk'
+import { CurrencyAmount, ETHER, JSBI } from '../bridge-js/pancakeswap-sdk/src'
 import { MIN_ETH } from '../constants'
 
 /**

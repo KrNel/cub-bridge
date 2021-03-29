@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Percent, Price } from '@pancakeswap-libs/sdk'
+import { Currency, Percent, Price } from '../../bridge-js/pancakeswap-sdk/src'
 import { Text } from '@pancakeswap-libs/uikit'
 import { AutoColumn } from '../../components/Column'
 import { AutoRow } from '../../components/Row'
